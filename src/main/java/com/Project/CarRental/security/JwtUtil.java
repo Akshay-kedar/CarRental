@@ -32,7 +32,7 @@ public class JwtUtil {
                 .compact();
     }
 
-    public String extractUsename(String token){
+    public String extractUsername(String token){
         return Jwts.parser()
                 .setSigningKey(secrete)
                 .parseClaimsJws(token)

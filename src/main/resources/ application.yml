@@ -10,3 +10,7 @@ spring:
     database-platform: org.hibernate.dialect.MySQLDialect
   application:
     name: hirewheels-api
+
+    jwt:
+      secret: secret_key_for_jwt_token
+      expiration: 86400000  # 24 hours

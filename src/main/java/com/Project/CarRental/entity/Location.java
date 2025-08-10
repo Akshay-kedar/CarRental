@@ -5,29 +5,20 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
 @Entity
+@Table(name = "location")
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "user")
-public class User {
+public class Location {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String firstName;
-
-    private String lastName;
-
-    @Column(unique = true, nullable = false)
-    private String email;
-
     @Column(nullable = false)
-    private String password;
+    private String locationName;
 
-    @ManyToOne
-    @JoinColumn(name = "role_id", nullable = false)
-    private Role role;
-
+    private String address;
+    private String city;
 
 }

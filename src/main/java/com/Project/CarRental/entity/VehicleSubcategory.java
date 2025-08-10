@@ -5,29 +5,23 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
 @Entity
-@AllArgsConstructor
+@Table(name = "vehicle_subcategory")
+@Data
 @NoArgsConstructor
-@Table(name = "user")
-public class User {
+@AllArgsConstructor
+public class VehicleSubcategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String firstName;
-
-    private String lastName;
-
-    @Column(unique = true, nullable = false)
-    private String email;
+    @Column(nullable = false)
+    private Double pricePerDay;
 
     @Column(nullable = false)
-    private String password;
+    private String subcategoryName;
 
     @ManyToOne
-    @JoinColumn(name = "role_id", nullable = false)
-    private Role role;
-
-
+    @JoinColumn(name="vehicle_category_id",nullable = false)
+    private VehicleCategory vehicleCategory;
 }
