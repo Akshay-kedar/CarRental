@@ -26,5 +26,12 @@ public class Vehicle {
     @Column(nullable = false)
     private Boolean availabilityStatus;
 
-    // Relationships with Location and VehicleSubcategory will be added in later sprints
+    @ManyToOne
+    @JoinColumn(name = "location_id", nullable = false)
+    private Location location;
+
+    @ManyToOne
+    @JoinColumn(name = "vehicle_subcategory_id", nullable = false)
+    private VehicleSubcategory vehicleSubcategory;
+
 }
